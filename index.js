@@ -29,8 +29,8 @@ app.get('/', async (req, res) => {
     if (response.status === 200) {
       const $ = cheerio.load(response.data);
       let name = $('#single > div.content.right > div.sheader > div.data > h1').text().trim();
-      const description = $('.wp-content').text().trim();
-      const rating = $('#repimdb > strong').text().trim();
+      const description = $('.wp-contentneww').text().trim();
+      const rating = $('span.rating-number').text().trim();
       const runtimeText = $('#single > div.content.right > div.sheader > div.data > div.extra > span.runtime').text().trim();
       const runtimeInMinutes = parseInt(runtimeText.match(/\d+/)[0]);
       const runtime = formatRuntime(runtimeInMinutes);
